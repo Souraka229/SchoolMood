@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réseau Social Élèves</title>
+    <link rel="stylesheet" href="styles.css">
+<style type="text/css" id="dcoder_stylesheet">/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5em;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.navbar ul li a:hover {
+    background-color: #555;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #0073e6;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: #0073e6;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #005bb5;
+    color: white;
+}
+
+/* Sign Up Form */
+.signup-form {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.signup-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.signup-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0073e6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.signup-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}</style></head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Réseau Écoles</div>
+        <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Groupes</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Événements</a></li>
+            <li><a href="#">Profil</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Bienvenue sur le Réseau Social des Élèves</h1>
+        <p>Connectez-vous, partagez et apprenez ensemble!</p>
+        <button class="cta-button" onclick="showSignupForm()">S'inscrire</button>
+    </section>
+
+    <!-- Sign Up Form -->
+    <section class="signup-form" id="signup-form">
+        <h2>Inscription</h2>
+        <form id="form">
+            <input type="text" id="username" placeholder="Nom d'utilisateur" required>
+            <input type="email" id="email" placeholder="Adresse email" required>
+            <input type="password" id="password" placeholder="Mot de passe" required>
+            <button type="submit">S'inscrire</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Réseau Écoles. Tous droits réservés.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+
+<script type="text/javascript" id="dcoder_script">// Afficher le formulaire d'inscription
+function showSignupForm() {
+    document.getElementById('signup-form').style.display = 'block';
+}
+
+// Validation du formulaire d'inscription
+document.getElementById('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (username && email && password) {
+        alert('Inscription réussie ! Bienvenue ' + username);
+        // Ici, tu pourrais envoyer ces données à un backend ou les sauvegarder dans localStorage.
+        document.getElementById('signup-form').reset();
+        document.getElementById('signup-form').style.display = 'none';
+    } else {
+        alert('Veuillez remplir tous les champs.');
+    }
+});</script></body></html>
